@@ -1,0 +1,51 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+
+# Environment variables (NEVER push these)
+.env
+.env.local
+.env.production
+.env.*.local
+
+# Firebase credentials (NEVER push these)
+serviceAccountKey.json
+firebase_key.json
+firebase-debug.log
+
+# Python virtual environment
+backend/venv/
+backend/.venv/
+
+# AI Model weights (too large for GitHub)
+*.gguf
+backend/llama.gguf
+
+# Build output
+frontend/dist/
+frontend/build/
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Test/scratch files
+backend/scratch_test.py
+backend/quick-select-test.py
+
+# Frontend build artifacts
+frontend/build_output.txt
+frontend/eslint_errors.json

@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================================
+   MediCheck AI — Design System
+   ======================================== */
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: #F8FAFC;
+    color: #0F172A;
+    line-height: 1.6;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+}
+
+@layer components {
+  /* ---------- Buttons ---------- */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm
+           transition-all duration-200 ease-out cursor-pointer
+           focus:outline-none focus:ring-2 focus:ring-offset-2
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-gradient-to-r from-primary-500 to-primary-600 text-white
+           hover:from-primary-600 hover:to-primary-700 hover:shadow-glow-primary
+           focus:ring-primary-400 active:scale-[0.97];
+  }
+  .btn-secondary {
+    @apply btn bg-white text-slate-700 border border-slate-200
+           hover:bg-slate-50 hover:border-slate-300 hover:shadow-soft
+           focus:ring-slate-300 active:scale-[0.97];
+  }
+  .btn-accent {
+    @apply btn bg-gradient-to-r from-accent-500 to-accent-600 text-white
+           hover:from-accent-600 hover:to-accent-700 hover:shadow-glow-accent
+           focus:ring-accent-400 active:scale-[0.97];
+  }
+  .btn-danger {
+    @apply btn bg-danger-500 text-white
+           hover:bg-danger-600
+           focus:ring-danger-400 active:scale-[0.97];
+  }
+  .btn-ghost {
+    @apply btn text-slate-600 hover:bg-slate-100 hover:text-slate-800
+           focus:ring-slate-300 active:scale-[0.97];
+  }
+  .btn-lg {
+    @apply px-7 py-3.5 text-base rounded-2xl;
+  }
+  .btn-sm {
+    @apply px-3.5 py-1.5 text-xs rounded-lg;
+  }
+  .btn-icon {
+    @apply p-2.5 rounded-xl;
+  }
+
+  /* ---------- Cards ---------- */
+  .card {
+    @apply bg-white rounded-2xl border border-slate-100 shadow-card
+           transition-all duration-200;
+  }
+  .card-hover {
+    @apply card hover:shadow-elevated hover:border-slate-200 hover:-translate-y-0.5;
+  }
+  .card-interactive {
+    @apply card-hover cursor-pointer active:scale-[0.99];
+  }
+
+  /* ---------- Inputs ---------- */
+  .input {
+    @apply w-full px-4 py-3 rounded-xl border border-slate-200 bg-white
+           text-slate-800 text-sm placeholder:text-slate-400
+           transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-primary-400/30 focus:border-primary-400
+           hover:border-slate-300;
+  }
+  .input-lg {
+    @apply px-5 py-3.5 text-base rounded-2xl;
+  }
+
+  /* ---------- Badges ---------- */
+  .badge {
+    @apply inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold;
+  }
+  .badge-low {
+    @apply badge bg-success-100 text-success-700;
+  }
+  .badge-medium {
+    @apply badge bg-warning-100 text-warning-700;
+  }
+  .badge-high {
+    @apply badge bg-danger-100 text-danger-700;
+  }
+  .badge-primary {
+    @apply badge bg-primary-100 text-primary-700;
+  }
+
+  /* ---------- Glass Effect ---------- */
+  .glass {
+    @apply bg-white/70 backdrop-blur-xl border border-white/20;
+  }
+
+  /* ---------- Page layout ---------- */
+  .page-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6;
+  }
+  .page-title {
+    @apply text-2xl sm:text-3xl font-bold text-slate-900;
+  }
+  .page-subtitle {
+    @apply text-sm sm:text-base text-slate-500 mt-1;
+  }
+
+  /* ---------- Urgency level cards ---------- */
+  .urgency-low {
+    @apply border-l-4 border-l-success-500 bg-success-50;
+  }
+  .urgency-medium {
+    @apply border-l-4 border-l-warning-500 bg-warning-50;
+  }
+  .urgency-high {
+    @apply border-l-4 border-l-danger-500 bg-danger-50;
+  }
+}
+
+@layer utilities {
+  .text-gradient-primary {
+    @apply bg-gradient-to-r from-primary-500 to-primary-700 bg-clip-text text-transparent;
+  }
+  .text-gradient-accent {
+    @apply bg-gradient-to-r from-accent-500 to-accent-600 bg-clip-text text-transparent;
+  }
+}
